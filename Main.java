@@ -18,7 +18,6 @@ class Main {
 		
 		// Create two strings of distinct characters in s1, s2
 		String distinctS1 = "";
-		String distinctS2 = "";
 		for (int i = 0; i < s1.length(); i++) {
 			if (distinctS1.indexOf(s1.charAt(i)) == -1) {
 				distinctS1 += s1.charAt(i);
@@ -27,16 +26,7 @@ class Main {
 			}
 		}
 		
-		for (int i = 0; i < s2.length(); i++) {
-			if (distinctS2.indexOf(s2.charAt(i)) == -1) {
-				distinctS2 += s2.charAt(i);
-			}
-		}
-		
-		
-		System.out.println("Distinct s1: " + distinctS1);
-		System.out.println("Distinct s2: " + distinctS2);
-		return distinctS1.length() <= distinctS2.length();
+		return distinctS1.length() <= s2.length();
 	}
 
 	public static void main(String[] args) {
