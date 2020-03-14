@@ -16,6 +16,7 @@ class Main {
 
 	public static boolean check(String s1, String s2) {
 		
+		// One-to-one mapping exists if values in s2 exceeds s1
 		if (s1.length() > s2.length()) {
 			return false;
 		}
@@ -23,9 +24,9 @@ class Main {
 			return true;
 		}
 		
+		// Create two strings of distinct characters in s1, s2
 		String distinctS1 = "";
 		String distinctS2 = "";
-		
 		for (int i = 0; i < s1.length(); i++) {
 			if (distinctS1.indexOf(s1.charAt(i)) == -1) {
 				distinctS1 += s1.charAt(i);
@@ -43,10 +44,16 @@ class Main {
 
 	public static void main(String[] args) {
 		try {
-			String in1 = args[0];
-			String in2 = args[1];
 			
-			System.out.println(check(in1, in2));
+			// Catch input error
+			if (args.length != 2) {
+				System.out.println("Input error. Please enter only two strings.");
+			} else {
+				String in1 = args[0];
+				String in2 = args[1];
+				System.out.println(check(in1, in2));
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
