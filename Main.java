@@ -38,17 +38,19 @@ class Main {
 			}
 		}
 		
-		System.out.println("Distinct string 1 = " + distinctS1);
-		System.out.println("Distinct string 2 = " + distinctS2);
-		
 		return distinctS1.length() >= distinctS2.length();
-		
 	}
 
 	public static void main(String[] args) {
-		System.out.println(check("abc", "bcd")); // true
-		System.out.println(check("foo", "bar")); // false
-		System.out.println(check("bar", "foo")); // true
+		try {
+			String in1 = args[0];
+			String in2 = args[1];
+			
+			System.out.println(check(in1, in2));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	
