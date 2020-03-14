@@ -15,7 +15,34 @@
 class Main {
 
 	public static boolean check(String s1, String s2) {
-		return true;
+		
+		if (s1.length() > s2.length()) {
+			return false;
+		}
+		if (s1.length() < s2.length()) {
+			return true;
+		}
+		
+		String distinctS1 = "";
+		String distinctS2 = "";
+		
+		for (int i = 0; i < s1.length(); i++) {
+			if (distinctS1.indexOf(s1.charAt(i)) == -1) {
+				distinctS1 += s1.charAt(i);
+			}
+		}
+		
+		for (int i = 0; i < s1.length(); i++) {
+			if (distinctS2.indexOf(s2.charAt(i)) == -1) {
+				distinctS2 += s2.charAt(i);
+			}
+		}
+		
+		System.out.println("Distinct string 1 = " + distinctS1);
+		System.out.println("Distinct string 1 = " + distinctS1);
+		
+		return distinctS1.length() < distinctS2.length();
+		
 	}
 
 	public static void main(String[] args) {
